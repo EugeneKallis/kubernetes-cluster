@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: servertool-frontend
+  name: servertool-backend
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: git@github.com:EugeneKallis/kubernetes-cluster.git
     targetRevision: HEAD
-    path: charts/frontend
+    path: charts/servertool-python/backend
   destination:
     server: https://kubernetes.default.svc
     namespace: default

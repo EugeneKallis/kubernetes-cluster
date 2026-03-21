@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: git@github.com:EugeneKallis/kubernetes-cluster.git
     targetRevision: HEAD
-    path: charts/infrastructure
+    path: charts/servertool-python/infrastructure
   destination:
     server: https://kubernetes.default.svc
     namespace: default
