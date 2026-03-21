@@ -1,5 +1,4 @@
 image:
-  tag: "latest" # Woodpecker CI will automatically update this tag on dev builds
-
+  tag: "dev-6a1543a9" # Woodpecker CI will automatically update this tag on dev builds
 ingress:
   host: "dev.servertool.cluster.lan"
