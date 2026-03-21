@@ -1,7 +1,7 @@
 global:
   environment: "Production"
   image:
-    tag: "dev-ad25fe73"
+    tag: "dev-c90a83ce"
 
 frontend:
   ingress:
