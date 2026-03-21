@@ -9,5 +9,5 @@ api_url: "/api"
 
 ingress:
   enabled: true
-  className: "nginx"
+  className: "traefik"
   host: "servertool.cluster.lan"
