@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:EugeneKallis/kubernetes-cluster.git
+    repoURL: https://github.com/EugeneKallis/kubernetes-cluster.git
     targetRevision: HEAD
     path: charts/servertool-python/frontend
   destination:
