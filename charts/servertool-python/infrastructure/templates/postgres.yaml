@@ -8,6 +8,17 @@ spec:
   selector:
     app: postgres
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,6 +32,10 @@ spec:
       labels:
         app: postgres
     spec:
+      volumes:
+      - name: postgres-data
+        persistentVolumeClaim:
+          claimName: postgres-pvc
       containers:
       - name: postgres
         image: {{ .Values.postgres.image }}
@@ -29,3 +44,6 @@ spec:
           value: postgres
         ports:
         - containerPort: {{ .Values.postgres.port }}
+        volumeMounts:
+        - name: postgres-data
+          mountPath: /var/lib/postgresql/data
