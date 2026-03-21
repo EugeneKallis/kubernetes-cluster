@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: agent
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: "{{ .Values.image.repository }}:{{ .Values.global.image.tag | default .Values.image.tag }}"
         imagePullPolicy: Always
         securityContext:
           privileged: true
