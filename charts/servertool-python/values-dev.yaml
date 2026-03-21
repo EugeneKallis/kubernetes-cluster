@@ -1,6 +1,6 @@
 global:
   image:
-    tag: "dev-32da3db5"
+    tag: "dev-ad25fe73"
 frontend:
   ingress:
     host: "dev.servertool.cluster.lan"
