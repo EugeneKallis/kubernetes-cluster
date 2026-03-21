@@ -32,6 +32,8 @@ spec:
       labels:
         app: redis
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: k3s-master
       volumes:
       - name: redis-data
         persistentVolumeClaim:

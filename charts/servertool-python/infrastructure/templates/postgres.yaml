@@ -32,6 +32,8 @@ spec:
       labels:
         app: postgres
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: k3s-master
       volumes:
       - name: postgres-data
         persistentVolumeClaim:

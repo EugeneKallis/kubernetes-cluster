@@ -14,6 +14,18 @@ spec:
       annotations:
         rollout.network.extension.pyserv.com/restartedAt: {{ now | quote }}
     spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - {{ .Release.Name }}-backend
+              topologyKey: kubernetes.io/hostname
       containers:
       - name: backend
         image: "{{ .Values.image.repository }}:{{ .Values.global.image.tag | default .Values.image.tag }}"
