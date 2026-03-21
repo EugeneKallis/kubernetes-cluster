@@ -4,7 +4,8 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
-    kubernetes.io/ingress.class: {{ .Values.ingress.className | quote }}
+    # Modern clusters use spec.ingressClassName instead of this annotation
+    # nginx.ingress.kubernetes.io/rewrite-target is removed to fix 404s
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:
