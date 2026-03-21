@@ -1,7 +1,7 @@
 replicaCount: 3
 image:
   repository: eugenekallis/servertoolpython-backend
-  tag: ff7a7439
+  tag: ac75b5e6
 service:
   type: ClusterIP
   port: 8080
