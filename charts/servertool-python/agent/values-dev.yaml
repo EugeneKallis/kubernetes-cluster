@@ -1,0 +1,2 @@
+image:
+  tag: "dev-latest" # Woodpecker CI will automatically update this tag on dev builds

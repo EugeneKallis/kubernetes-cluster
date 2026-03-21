@@ -1,0 +1,2 @@
+image:
+  tag: "ff7a7439" # Woodpecker CI will automatically update this tag on prod builds

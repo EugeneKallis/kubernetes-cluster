@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: servertool-production-env
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/EugeneKallis/kubernetes-cluster.git
+    targetRevision: HEAD
+    path: apps/servertool-python/production
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

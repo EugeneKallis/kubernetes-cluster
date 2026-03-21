@@ -1,18 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: servertool-backend
+  name: servertool-infrastructure-prod
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/EugeneKallis/kubernetes-cluster.git
     targetRevision: HEAD
-    path: charts/servertool-python/backend
+    path: charts/servertool-python/infrastructure
+    helm:
+      valueFiles:
+      - values-prod.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: production
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

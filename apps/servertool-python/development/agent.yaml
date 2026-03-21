@@ -1,18 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: servertool-infrastructure
+  name: servertool-agent-dev
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/EugeneKallis/kubernetes-cluster.git
     targetRevision: HEAD
-    path: charts/servertool-python/infrastructure
+    path: charts/servertool-python/agent
+    helm:
+      valueFiles:
+      - values-dev.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: development
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
