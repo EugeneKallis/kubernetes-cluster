@@ -4,8 +4,7 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/use-regex: "true"
+    kubernetes.io/ingress.class: {{ .Values.ingress.className | quote }}
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:
