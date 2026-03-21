@@ -1,7 +1,7 @@
 global:
   environment: "Development"
   image:
-    tag: "dev-11d6c4a9"
+    tag: "dev-c3546e29"
 frontend:
   ingress:
     host: "dev.servertool.cluster.lan"
