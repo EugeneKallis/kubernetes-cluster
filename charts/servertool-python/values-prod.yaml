@@ -1,6 +1,6 @@
 global:
   image:
-    tag: "ac75b5e6"
+    tag: "dev-ad25fe73"
 
 frontend:
   ingress:
