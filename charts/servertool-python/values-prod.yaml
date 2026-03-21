@@ -1,4 +1,5 @@
 global:
+  environment: "Production"
   image:
     tag: "dev-ad25fe73"
 

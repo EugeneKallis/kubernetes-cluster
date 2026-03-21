@@ -21,6 +21,10 @@ spec:
         env:
         - name: NEXT_PUBLIC_API_URL
           value: {{ .Values.api_url | default "http://backend:8080" | quote }}
+        - name: NEXT_PUBLIC_ENVIRONMENT
+          value: {{ .Values.global.environment | default "Production" | quote }}
+        - name: NEXT_PUBLIC_DOCKER_TAG
+          value: {{ .Values.global.image.tag | default .Values.image.tag | quote }}
         ports:
         - containerPort: {{ .Values.service.port }}
 ---

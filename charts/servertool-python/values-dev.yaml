@@ -1,4 +1,5 @@
 global:
+  environment: "Development"
   image:
     tag: "dev-c93f5646"
 frontend:
