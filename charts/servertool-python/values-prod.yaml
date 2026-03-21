@@ -1,0 +1,13 @@
+backend:
+  image:
+    tag: "ac75b5e6"
+
+frontend:
+  image:
+    tag: "ac75b5e6"
+  ingress:
+    host: "servertool.cluster.lan"
+
+agent:
+  image:
+    tag: "ac75b5e6"

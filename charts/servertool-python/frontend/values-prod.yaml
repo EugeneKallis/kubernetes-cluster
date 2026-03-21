@@ -1,5 +1,0 @@
-image:
-  tag: "ac75b5e6" # Woodpecker CI will automatically update this tag on prod builds
-
-ingress:
-  host: "servertool.cluster.lan"
