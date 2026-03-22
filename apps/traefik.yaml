@@ -37,14 +37,11 @@ spec:
         providers:
           kubernetesGateway:
             enabled: true
+            experimentalChannel: true
           kubernetesIngress:
             enabled: true
           kubernetesCRD:
             enabled: false
-        # Correct way to disable CRD creation in this version
-        experimental:
-          kubernetesGateway:
-            enabled: true
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: traefik
