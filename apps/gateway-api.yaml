@@ -22,6 +22,12 @@ spec:
     - SkipDryRunOnMissingResource=true
     - Replace=true
     - ServerSideApply=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        maxDuration: 3m
+        factor: 2
   ignoreDifferences:
   - group: apiextensions.k8s.io
     kind: CustomResourceDefinition
@@ -35,9 +41,10 @@ spec:
   - group: apiextensions.k8s.io
     kind: CustomResourceDefinition
     name: referencegrants.gateway.networking.k8s.io
-    retry:
-      limit: 5
-      backoff:
-        duration: 5s
-        maxDuration: 3m
-        factor: 2
+  - group: gateway.networking.k8s.io
+    kind: Gateway
+    name: traefik-gateway
+    jsonPointers:
+    - /metadata/annotations
+    - /metadata/labels
+    - /status

@@ -41,6 +41,9 @@ spec:
             enabled: true
           kubernetesCRD:
             enabled: false
+        # Disable CRD creation since we manage them in gateway-api app
+        gatewayapi:
+          installGatewayClasses: false
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: traefik
