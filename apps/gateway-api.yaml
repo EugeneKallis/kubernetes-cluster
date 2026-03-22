@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gateway-api
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/EugeneKallis/kubernetes-cluster.git'
+    targetRevision: HEAD
+    path: manifests/gateway-api
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: ''
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+    - SkipDryRunOnMissingResource=true
+    - Replace=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        maxDuration: 3m
+        factor: 2

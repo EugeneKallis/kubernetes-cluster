@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/EugeneKallis/kubernetes-cluster.git
     targetRevision: HEAD
-    path: apps/servertool-python
+    path: apps/
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
