@@ -33,10 +33,3 @@ spec:
     kind: CustomResourceDefinition
     jsonPointers:
     - /spec/conversion
-  - group: gateway.networking.k8s.io
-    kind: Gateway
-    name: traefik-gateway
-    jsonPointers:
-    - /metadata/annotations
-    - /metadata/labels
-    - /status

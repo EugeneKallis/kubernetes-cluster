@@ -42,6 +42,12 @@ spec:
             enabled: true
           kubernetesCRD:
             enabled: false
+        gateway:
+          enabled: true
+          listeners:
+            web:
+              namespacePolicy:
+                from: All
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: traefik
