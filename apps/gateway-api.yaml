@@ -31,16 +31,8 @@ spec:
   ignoreDifferences:
   - group: apiextensions.k8s.io
     kind: CustomResourceDefinition
-    name: gatewayclasses.gateway.networking.k8s.io
-  - group: apiextensions.k8s.io
-    kind: CustomResourceDefinition
-    name: gateways.gateway.networking.k8s.io
-  - group: apiextensions.k8s.io
-    kind: CustomResourceDefinition
-    name: httproutes.gateway.networking.k8s.io
-  - group: apiextensions.k8s.io
-    kind: CustomResourceDefinition
-    name: referencegrants.gateway.networking.k8s.io
+    jsonPointers:
+    - /spec/conversion
   - group: gateway.networking.k8s.io
     kind: Gateway
     name: traefik-gateway
