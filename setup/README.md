@@ -81,6 +81,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 ## 6. Expose ArgoCD via Gateway API
 
 ```bash
+kubectl apply -f setup/05-traefik-gateway.yaml
 kubectl apply -f setup/04-argocd-httproute.yaml
 ```
 
