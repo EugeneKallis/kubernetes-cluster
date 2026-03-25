@@ -1,15 +1,12 @@
 global:
   environment: "Production"
   image:
-    tag: "dev-c90a83ce"
-
+    tag: "a8aa8788"
 frontend:
   replicaCount: 2
   ingress:
     host: "servertool.cluster.lan"
-
 backend:
   replicaCount: 2
-
 agent:
   replicaCount: 2
