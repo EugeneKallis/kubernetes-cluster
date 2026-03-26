@@ -1,7 +1,7 @@
 global:
   environment: "Production"
   image:
-    tag: "0c39e78e"
+    tag: "52b36a23"
 frontend:
   replicaCount: 2
   ingress:
