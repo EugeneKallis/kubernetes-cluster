@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-scraper
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-scraper
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-scraper
+      annotations:
+        rollout.network.extension.pyserv.com/restartedAt: {{ now | quote }}
+    spec:
+      containers:
+      - name: scraper
+        image: "{{ .Values.image.repository }}:{{ .Values.global.image.tag | default .Values.image.tag }}"
+        imagePullPolicy: Always
+        env:
+        - name: REDIS_URL
+          value: "redis://redis:6379/0"
+        - name: DATABASE_URL
+          value: {{ .Values.global.databaseUrl | quote }}

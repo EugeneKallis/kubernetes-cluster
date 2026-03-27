@@ -1,0 +1,4 @@
+replicaCount: 1
+image:
+  repository: eugenekallis/servertoolpython-scraper
+  tag: latest
