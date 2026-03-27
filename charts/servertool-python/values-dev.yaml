@@ -11,3 +11,7 @@ frontend:
     host: "dev.servertool.cluster.lan"
 arr-searcher:
   replicaCount: 1
+magnet-bridge:
+  replicaCount: 1
+  ingress:
+    host: "dev.magnetbridge.cluster.lan"

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-magnet-bridge
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-magnet-bridge
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-magnet-bridge
+    spec:
+      containers:
+      - name: magnet-bridge
+        image: "{{ .Values.image.repository }}:{{ .Values.global.image.tag | default .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        securityContext:
+          privileged: true
+        env:
+        - name: DECYPHARR_URL
+          value: "{{ .Values.env.DECYPHARR_URL }}"
+        - name: TORRENT_DEST_DIR
+          value: "{{ .Values.env.TORRENT_DEST_DIR }}"
+        - name: MAGNET_BRIDGE_PORT
+          value: "{{ .Values.service.port }}"
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        volumeMounts:
+        - mountPath: {{ .Values.containerMountPath }}
+          name: host-mount
+          mountPropagation: HostToContainer
+      volumes:
+      - name: host-mount
+        hostPath:
+          path: {{ .Values.hostMountPath }}
+          type: DirectoryOrCreate

@@ -24,3 +24,6 @@ dependencies:
   - name: arr-searcher
     version: 0.1.0
     repository: "file://./arr-searcher"
+  - name: magnet-bridge
+    version: 0.1.0
+    repository: "file://./magnet-bridge"

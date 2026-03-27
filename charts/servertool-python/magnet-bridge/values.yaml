@@ -1,0 +1,28 @@
+replicaCount: 1
+
+image:
+  repository: eugenekallis/servertoolpython-magnet-bridge
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 8081
+
+ingress:
+  enabled: true
+  className: traefik
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+  hosts:
+    - host: magnetbridge.k3s.lan
+      paths:
+        - path: /
+          pathType: Prefix
+
+hostMountPath: "/mnt"
+containerMountPath: "/mnt"
+
+env:
+  DECYPHARR_URL: "http://192.168.1.99:8282"
+  TORRENT_DEST_DIR: "/mnt/debrid/media"
