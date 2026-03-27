@@ -1,7 +1,7 @@
 global:
   environment: "Production"
   image:
-    tag: "03c93351"
+    tag: "e815a84e"
   ollamaHost: "http://192.168.1.125:11434"
   databaseUrl: "postgresql://postgres:postgres@db:5432/postgres"
   redisUrl: "redis://redis:6379/0"
@@ -15,6 +15,5 @@ backend:
   ollamaHost: "http://192.168.1.125:11434"
 agent:
   replicaCount: 2
-
 arr-searcher:
   replicaCount: 2
