@@ -9,5 +9,6 @@ frontend:
     host: "servertool.cluster.lan"
 backend:
   replicaCount: 2
+  ollamaHost: "http://192.168.1.125:11434"
 agent:
   replicaCount: 2

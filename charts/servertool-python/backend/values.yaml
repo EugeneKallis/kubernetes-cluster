@@ -5,3 +5,4 @@ image:
 service:
   type: ClusterIP
   port: 8080
+ollamaHost: "http://localhost:11434"
