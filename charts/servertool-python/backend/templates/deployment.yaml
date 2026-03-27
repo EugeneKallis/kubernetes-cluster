@@ -35,6 +35,8 @@ spec:
           value: postgresql://postgres:postgres@db:5432/postgres
         - name: REDIS_URL
           value: redis://redis:6379/0
+        - name: OLLAMA_HOST
+          value: "{{ .Values.global.ollamaHost }}"
         ports:
         - containerPort: {{ .Values.service.port }}
 ---
