@@ -1,7 +1,7 @@
 global:
   environment: "Development"
   image:
-    tag: "dev-3e1b82a3"
+    tag: "dev-cf8621d5"
   ollamaHost: "http://192.168.1.125:11434"
 frontend:
   ingress:
