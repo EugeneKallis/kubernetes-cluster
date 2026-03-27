@@ -35,6 +35,8 @@ spec:
         env:
         - name: REDIS_URL
           value: "redis://redis:6379/0"
+        - name: OLLAMA_HOST
+          value: "{{ .Values.global.ollamaHost }}"
         volumeMounts:
         - mountPath: {{ .Values.containerMountPath }}
           name: host-mount
