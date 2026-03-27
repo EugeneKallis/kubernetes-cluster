@@ -21,3 +21,6 @@ dependencies:
   - name: scraper
     version: 0.1.0
     repository: "file://./scraper"
+  - name: arr-searcher
+    version: 0.1.0
+    repository: "file://./arr-searcher"

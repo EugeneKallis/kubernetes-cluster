@@ -4,6 +4,11 @@ global:
     tag: "dev-b57f0e80"
   ollamaHost: "http://192.168.1.125:11434"
   databaseUrl: "postgresql://postgres:postgres@db:5432/postgres"
+  redisUrl: "redis://redis:6379/0"
+  postgresPassword: "postgres"
 frontend:
   ingress:
     host: "dev.servertool.cluster.lan"
+
+arr-searcher:
+  replicaCount: 1

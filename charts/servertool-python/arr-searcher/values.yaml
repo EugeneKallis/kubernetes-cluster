@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: eugenekallis/servertoolpython-arr-searcher
+  tag: latest # Tag will be overridden by global in deployment template
+  pullPolicy: Always
+
+global:
+  image:
+    tag: ""

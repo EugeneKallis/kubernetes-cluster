@@ -1,25 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-scraper
+  name: {{ .Release.Name }}-arr-searcher
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}-scraper
+      app: {{ .Release.Name }}-arr-searcher
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}-scraper
+        app: {{ .Release.Name }}-arr-searcher
       annotations:
         rollout.network.extension.pyserv.com/restartedAt: {{ now | quote }}
     spec:
       containers:
-      - name: scraper
+      - name: arr-searcher
         image: "{{ .Values.image.repository }}:{{ .Values.global.image.tag | default .Values.image.tag }}"
-        imagePullPolicy: Always
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
         - name: REDIS_URL
           value: {{ .Values.global.redisUrl | quote }}
-        - name: DATABASE_URL
-          value: {{ .Values.global.databaseUrl | quote }}

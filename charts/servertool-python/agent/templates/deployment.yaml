@@ -34,7 +34,7 @@ spec:
           privileged: true
         env:
         - name: REDIS_URL
-          value: "redis://redis:6379/0"
+          value: {{ .Values.global.redisUrl | quote }}
         - name: OLLAMA_HOST
           value: "{{ .Values.global.ollamaHost }}"
         volumeMounts:

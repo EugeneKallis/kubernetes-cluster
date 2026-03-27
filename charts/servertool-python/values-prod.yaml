@@ -4,6 +4,8 @@ global:
     tag: "03c93351"
   ollamaHost: "http://192.168.1.125:11434"
   databaseUrl: "postgresql://postgres:postgres@db:5432/postgres"
+  redisUrl: "redis://redis:6379/0"
+  postgresPassword: "postgres"
 frontend:
   replicaCount: 2
   ingress:
@@ -12,4 +14,7 @@ backend:
   replicaCount: 2
   ollamaHost: "http://192.168.1.125:11434"
 agent:
+  replicaCount: 2
+
+arr-searcher:
   replicaCount: 2
