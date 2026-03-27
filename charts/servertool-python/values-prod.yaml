@@ -2,7 +2,7 @@ global:
   environment: "Production"
   image:
     tag: "bd3d96fc"
-  ollamaHost: "http://192.168.1.125:11434"
+  ollamaPort: 11434
 frontend:
   replicaCount: 2
   ingress:

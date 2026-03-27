@@ -2,7 +2,7 @@ global:
   environment: "Development"
   image:
     tag: "dev-6c5a24c8"
-  ollamaHost: "http://192.168.1.125:11434"
+  ollamaPort: 11434
 frontend:
   ingress:
     host: "dev.servertool.cluster.lan"
