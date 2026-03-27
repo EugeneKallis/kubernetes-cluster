@@ -1,7 +1,7 @@
 global:
   environment: "Production"
   image:
-    tag: "bd3d96fc"
+    tag: "91823a36"
   ollamaHost: "http://192.168.1.125:11434"
 frontend:
   replicaCount: 2
