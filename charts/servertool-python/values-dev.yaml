@@ -15,3 +15,5 @@ magnet-bridge:
   replicaCount: 1
   ingress:
     host: "dev.magnetbridge.cluster.lan"
+agent:
+  replicaCount: 2

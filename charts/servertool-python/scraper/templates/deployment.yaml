@@ -21,5 +21,3 @@ spec:
         env:
         - name: REDIS_URL
           value: {{ .Values.global.redisUrl | quote }}
-        - name: DATABASE_URL
-          value: {{ .Values.global.databaseUrl | quote }}
