@@ -14,11 +14,7 @@ ingress:
   className: traefik
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
-  hosts:
-    - host: magnetbridge.k3s.lan
-      paths:
-        - path: /
-          pathType: Prefix
+  host: magnetbridge.k3s.lan
 
 hostMountPath: "/mnt"
 containerMountPath: "/mnt"
