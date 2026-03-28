@@ -8,12 +8,12 @@ global:
   postgresPassword: "postgres"
 frontend:
   ingress:
-    host: "dev.servertool.cluster.lan"
+    host: "dev.servertool.k3s.lan"
 arr-searcher:
   replicaCount: 1
 magnet-bridge:
   replicaCount: 1
   ingress:
-    host: "dev.magnetbridge.cluster.lan"
+    host: "dev.magnetbridge.k3s.lan"
 agent:
   replicaCount: 2

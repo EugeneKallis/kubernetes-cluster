@@ -10,4 +10,4 @@ api_url: "/api"
 ingress:
   enabled: true
   className: "traefik"
-  host: "servertool.cluster.lan"
+  host: "servertool.k3s.lan"

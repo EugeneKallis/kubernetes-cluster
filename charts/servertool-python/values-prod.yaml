@@ -9,7 +9,7 @@ global:
 frontend:
   replicaCount: 2
   ingress:
-    host: "servertool.cluster.lan"
+    host: "servertool.k3s.lan"
 backend:
   replicaCount: 2
   ollamaHost: "http://192.168.1.125:11434"
@@ -21,4 +21,4 @@ magnet-bridge:
   enabled: false
   replicaCount: 2
   ingress:
-    host: "magnetbridge.cluster.lan"
+    host: "magnetbridge.k3s.lan"

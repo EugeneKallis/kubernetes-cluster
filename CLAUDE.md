@@ -59,8 +59,8 @@ See `setup/README.md` for full install commands.
 
 Domain routing uses local DNS (AdGuard Home or `/etc/hosts`):
 - `argocd.k3s.lan` → ArgoCD UI
-- `dev.servertool.cluster.lan` → development frontend
-- `servertool.cluster.lan` → production frontend
+- `dev.servertool.k3s.lan` → development frontend
+- `servertool.k3s.lan` → production frontend
 
 All map to `192.168.1.240`. Routing is handled by Traefik via Gateway API `HTTPRoute` resources.
 
