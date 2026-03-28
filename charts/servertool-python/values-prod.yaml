@@ -17,3 +17,8 @@ agent:
   replicaCount: 2
 arr-searcher:
   replicaCount: 2
+magnet-bridge:
+  enabled: false
+  replicaCount: 2
+  ingress:
+    host: "magnetbridge.cluster.lan"
