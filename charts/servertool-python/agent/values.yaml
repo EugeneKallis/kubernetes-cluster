@@ -4,3 +4,5 @@ image:
   tag: ac75b5e6
 hostMountPath: "/mnt"
 containerMountPath: "/mnt"
+mediaDirectories: "/mnt/debrid/media/special"
+

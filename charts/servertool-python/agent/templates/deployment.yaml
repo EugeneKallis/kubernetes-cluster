@@ -37,6 +37,8 @@ spec:
           value: {{ .Values.global.redisUrl | quote }}
         - name: OLLAMA_HOST
           value: "{{ .Values.global.ollamaHost }}"
+        - name: MEDIA_DIRECTORIES
+          value: {{ .Values.mediaDirectories | quote }}
         volumeMounts:
         - mountPath: {{ .Values.containerMountPath }}
           name: host-mount
