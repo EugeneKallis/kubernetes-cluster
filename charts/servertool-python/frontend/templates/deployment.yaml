@@ -33,10 +33,6 @@ spec:
         env:
         - name: NEXT_PUBLIC_API_URL
           value: {{ .Values.api_url | default "http://backend:8080" | quote }}
-        - name: NEXT_PUBLIC_MANAGED_CATEGORY
-          value: {{ .Values.managedCategory | default "special" | quote }}
-        - name: NEXT_PUBLIC_MAGNET_BRIDGE_URL
-          value: {{ .Values.magnetBridgeUrl | default "https://magnetbridge.ekserver.com/api" | quote }}
         - name: APP_ENVIRONMENT
           value: {{ .Values.global.environment | default "Production" | quote }}
         - name: APP_DOCKER_TAG

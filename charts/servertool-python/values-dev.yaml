@@ -9,14 +9,14 @@ global:
 frontend:
   ingress:
     host: "dev.servertool.k3s.lan"
+backend:
   managedCategory: "special-dev"
-  magnetBridgeUrl: "http://dev.magnetbridge.k3s.lan/api"
+  magnetBridgeUrl: "http://magnet-bridge:8081"
 arr-searcher:
   replicaCount: 1
 magnet-bridge:
+  enabled: true
   replicaCount: 1
-  ingress:
-    host: "dev.magnetbridge.k3s.lan"
   env:
     MANAGED_CATEGORY: "special-dev"
     DEBUG_SKIP_MOVE: "true"

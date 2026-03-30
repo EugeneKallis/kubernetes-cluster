@@ -10,8 +10,6 @@ frontend:
   replicaCount: 2
   ingress:
     host: "servertool.k3s.lan"
-  managedCategory: "special"
-  magnetBridgeUrl: "https://magnetbridge.ekserver.com/api"
 backend:
   replicaCount: 2
   ollamaHost: "http://192.168.1.125:11434"
@@ -22,8 +20,6 @@ arr-searcher:
 magnet-bridge:
   enabled: false
   replicaCount: 2
-  ingress:
-    host: "magnetbridge.ekserver.com"
   env:
     MANAGED_CATEGORY: "special"
     DEBUG_SKIP_MOVE: "false"

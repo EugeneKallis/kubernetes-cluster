@@ -37,6 +37,10 @@ spec:
           value: {{ .Values.global.redisUrl | quote }}
         - name: OLLAMA_HOST
           value: {{ .Values.global.ollamaHost | default .Values.ollamaHost | default "http://localhost:11434" | quote }}
+        - name: MAGNET_BRIDGE_URL
+          value: {{ .Values.magnetBridgeUrl | default "http://magnet-bridge:8081" | quote }}
+        - name: MANAGED_CATEGORY
+          value: {{ .Values.managedCategory | default "special" | quote }}
         ports:
         - containerPort: {{ .Values.service.port }}
 ---
