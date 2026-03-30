@@ -13,7 +13,7 @@ frontend:
 backend:
   replicaCount: 2
   ollamaHost: "http://192.168.1.125:11434"
-  magnetBridgeUrl: "http://servertool-magnet-bridge:8081"
+  magnetBridgeUrl: "http://servertool-prod-magnet-bridge:8081"
 agent:
   replicaCount: 2
 arr-searcher:
