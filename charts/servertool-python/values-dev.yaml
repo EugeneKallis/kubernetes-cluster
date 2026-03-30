@@ -16,7 +16,6 @@ arr-searcher:
   replicaCount: 1
 magnet-bridge:
   enabled: true
-  replicaCount: 1
   env:
     MANAGED_CATEGORY: "special-dev"
     DEBUG_SKIP_MOVE: "true"

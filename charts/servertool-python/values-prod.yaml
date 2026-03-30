@@ -19,8 +19,7 @@ agent:
 arr-searcher:
   replicaCount: 2
 magnet-bridge:
-  enabled: false
-  replicaCount: 2
+  enabled: true
   env:
     MANAGED_CATEGORY: "special"
     DEBUG_SKIP_MOVE: "false"

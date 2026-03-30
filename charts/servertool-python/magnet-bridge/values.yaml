@@ -1,5 +1,6 @@
 enabled: false
 
+# Must stay at 1 — multiple replicas would race to process the same torrent
 replicaCount: 1
 
 image:
