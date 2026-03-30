@@ -10,6 +10,7 @@ frontend:
   ingress:
     host: "dev.servertool.k3s.lan"
   managedCategory: "special-dev"
+  magnetBridgeUrl: "http://dev.magnetbridge.k3s.lan/api"
 arr-searcher:
   replicaCount: 1
 magnet-bridge:

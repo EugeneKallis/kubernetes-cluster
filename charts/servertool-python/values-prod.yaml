@@ -11,6 +11,7 @@ frontend:
   ingress:
     host: "servertool.k3s.lan"
   managedCategory: "special"
+  magnetBridgeUrl: "https://magnetbridge.ekserver.com/api"
 backend:
   replicaCount: 2
   ollamaHost: "http://192.168.1.125:11434"
