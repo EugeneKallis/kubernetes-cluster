@@ -11,7 +11,7 @@ frontend:
     host: "dev.servertool.k3s.lan"
 backend:
   managedCategory: "special-dev"
-  magnetBridgeUrl: "http://magnet-bridge:8081"
+  magnetBridgeUrl: "http://servertool-dev-magnet-bridge:8081"
 arr-searcher:
   replicaCount: 1
 magnet-bridge:
