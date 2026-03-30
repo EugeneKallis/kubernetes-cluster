@@ -10,6 +10,7 @@ frontend:
   replicaCount: 2
   ingress:
     host: "servertool.k3s.lan"
+  managedCategory: "special"
 backend:
   replicaCount: 2
   ollamaHost: "http://192.168.1.125:11434"
@@ -22,3 +23,6 @@ magnet-bridge:
   replicaCount: 2
   ingress:
     host: "magnetbridge.ekserver.com"
+  env:
+    MANAGED_CATEGORY: "special"
+    DEBUG_SKIP_MOVE: "false"

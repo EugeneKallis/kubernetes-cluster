@@ -26,6 +26,10 @@ spec:
           value: "{{ .Values.env.TORRENT_DEST_DIR }}"
         - name: MAGNET_BRIDGE_PORT
           value: "{{ .Values.service.port }}"
+        - name: MANAGED_CATEGORY
+          value: "{{ .Values.env.MANAGED_CATEGORY }}"
+        - name: DEBUG_SKIP_MOVE
+          value: "{{ .Values.env.DEBUG_SKIP_MOVE }}"
         ports:
         - containerPort: {{ .Values.service.port }}
         volumeMounts:

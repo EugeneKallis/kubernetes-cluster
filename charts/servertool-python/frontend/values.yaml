@@ -6,6 +6,7 @@ service:
   type: ClusterIP
   port: 3000
 api_url: "/api"
+managedCategory: "special"
 
 ingress:
   enabled: true

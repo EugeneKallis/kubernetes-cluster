@@ -9,11 +9,15 @@ global:
 frontend:
   ingress:
     host: "dev.servertool.k3s.lan"
+  managedCategory: "special-dev"
 arr-searcher:
   replicaCount: 1
 magnet-bridge:
   replicaCount: 1
   ingress:
     host: "dev.magnetbridge.k3s.lan"
+  env:
+    MANAGED_CATEGORY: "special-dev"
+    DEBUG_SKIP_MOVE: "true"
 agent:
   replicaCount: 2
