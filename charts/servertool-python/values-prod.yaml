@@ -21,4 +21,4 @@ magnet-bridge:
   enabled: false
   replicaCount: 2
   ingress:
-    host: "magnetbridge.k3s.lan"
+    host: "magnetbridge.ekserver.com"
