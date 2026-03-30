@@ -1,7 +1,7 @@
 global:
   environment: "Production"
   image:
-    tag: "03.30.21-06.4954b352"
+    tag: "03.30.23-26.b814e0e7"
   ollamaHost: "http://192.168.1.125:11434"
   databaseUrl: "postgresql://postgres:postgres@db:5432/postgres"
   redisUrl: "redis://redis:6379/0"
