@@ -1,7 +1,7 @@
 global:
   environment: "Development"
   image:
-    tag: "dev-03.31.00-21.8ce03062"
+    tag: "dev-03.31.00-26.f7af7baf"
   ollamaHost: "http://192.168.1.125:11434"
   databaseUrl: "postgresql://postgres:postgres@db:5432/postgres"
   redisUrl: "redis://redis:6379/0"
