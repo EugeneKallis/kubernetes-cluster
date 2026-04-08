@@ -5,3 +5,9 @@ global:
 frontend:
   ingress:
     host: "dev.mission-control.k3s.lan"
+
+backend:
+  postgres:
+    host: "192.168.1.150"
+    port: "5432"
+    database: "mission_control_dev"

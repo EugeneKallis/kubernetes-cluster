@@ -35,6 +35,16 @@ spec:
           value: "1"
         - name: PYTHONUNBUFFERED
           value: "1"
+        - name: POSTGRES_HOST
+          value: {{ .Values.postgres.host | quote }}
+        - name: POSTGRES_PORT
+          value: {{ .Values.postgres.port | quote }}
+        - name: POSTGRES_USER
+          value: {{ .Values.postgres.user | quote }}
+        - name: POSTGRES_PASSWORD
+          value: {{ .Values.postgres.password | quote }}
+        - name: POSTGRES_DB
+          value: {{ .Values.postgres.database | quote }}
         ports:
         - containerPort: {{ .Values.service.port }}
 ---
