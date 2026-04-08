@@ -1,7 +1,7 @@
 global:
   environment: "Development"
   image:
-    tag: "dev-04.08.19-04.e4930ab8"
+    tag: "dev-04.08.19-12.3d3cb60b"
 frontend:
   ingress:
     host: "dev.mission-control.k3s.lan"
