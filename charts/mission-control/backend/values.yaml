@@ -10,5 +10,7 @@ postgres:
   host: "192.168.1.150"
   port: "5432"
   user: "mission_control"
-  password: ""
   database: "mission_control_dev"
+  existingSecret:
+    name: "mission-control-postgres"
+    key: "password"

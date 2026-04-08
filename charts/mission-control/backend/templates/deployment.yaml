@@ -42,7 +42,10 @@ spec:
         - name: POSTGRES_USER
           value: {{ .Values.postgres.user | quote }}
         - name: POSTGRES_PASSWORD
-          value: {{ .Values.postgres.password | quote }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.postgres.existingSecret.name | quote }}
+              key: {{ .Values.postgres.existingSecret.key | quote }}
         - name: POSTGRES_DB
           value: {{ .Values.postgres.database | quote }}
         ports:
