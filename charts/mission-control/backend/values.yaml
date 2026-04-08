@@ -1,0 +1,7 @@
+replicaCount: 2
+image:
+  repository: eugenekallis/mission-control-backend
+  tag: latest
+service:
+  type: ClusterIP
+  port: 5056
