@@ -42,14 +42,22 @@ PGPASSWORD='CHANGE_ME_STRONG_PASSWORD' psql "postgresql://mission_control@192.16
 3) Kubernetes secret (recommended)
 
 # Option A: direct command
-kubectl -n mission-control create secret generic mission-control-postgres \
+kubectl -n development create secret generic mission-control-postgres \
+  --from-literal=password='CHANGE_ME_STRONG_PASSWORD' \
+  --dry-run=client -o yaml | kubectl apply -f -
+
+kubectl -n production create secret generic mission-control-postgres \
   --from-literal=password='CHANGE_ME_STRONG_PASSWORD' \
   --dry-run=client -o yaml | kubectl apply -f -
 
 # Option B: from .env file
 # Create a local file (do not commit):
 #   PG_PASSWORD=CHANGE_ME_STRONG_PASSWORD
-kubectl -n mission-control create secret generic mission-control-postgres \
+kubectl -n development create secret generic mission-control-postgres \
+  --from-env-file=.env \
+  --dry-run=client -o yaml | kubectl apply -f -
+
+kubectl -n production create secret generic mission-control-postgres \
   --from-env-file=.env \
   --dry-run=client -o yaml | kubectl apply -f -
 
@@ -61,10 +69,10 @@ IMPORTANT for Option B:
 
 # Dev
 helm upgrade --install mission-control-dev ./charts/mission-control \
-  -n mission-control --create-namespace \
+  -n development --create-namespace \
   -f ./charts/mission-control/values-dev.yaml
 
 # Prod
 helm upgrade --install mission-control-prod ./charts/mission-control \
-  -n mission-control \
+  -n production --create-namespace \
   -f ./charts/mission-control/values-prod.yaml
