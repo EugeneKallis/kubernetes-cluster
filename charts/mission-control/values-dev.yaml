@@ -1,11 +1,10 @@
 global:
   environment: "Development"
   image:
-    tag: "dev-04.08.17-14.d95e2096"
+    tag: "dev-04.08.18-50.60abc518"
 frontend:
   ingress:
     host: "dev.mission-control.k3s.lan"
-
 backend:
   postgres:
     host: "192.168.1.150"
