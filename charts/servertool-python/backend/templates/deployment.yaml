@@ -41,6 +41,8 @@ spec:
           value: {{ .Values.magnetBridgeUrl | default "http://magnet-bridge:8081" | quote }}
         - name: MANAGED_CATEGORY
           value: {{ .Values.managedCategory | default "special" | quote }}
+        - name: CORS_ALLOWED_ORIGINS
+          value: {{ .Values.corsAllowedOrigins | quote }}
         ports:
         - containerPort: {{ .Values.service.port }}
 ---
