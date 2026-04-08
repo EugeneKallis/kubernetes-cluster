@@ -14,6 +14,7 @@ backend:
   replicaCount: 2
   ollamaHost: "http://192.168.1.203:11434"
   magnetBridgeUrl: "http://servertool-prod-magnet-bridge:8081"
+  corsAllowedOrigins: "https://servertool.k3s.lan"
 agent:
   replicaCount: 2
 arr-searcher:

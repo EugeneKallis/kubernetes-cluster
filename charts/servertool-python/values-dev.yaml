@@ -12,6 +12,7 @@ frontend:
 backend:
   managedCategory: "special-dev"
   magnetBridgeUrl: "http://servertool-dev-magnet-bridge:8081"
+  corsAllowedOrigins: "http://dev.servertool.k3s.lan"
 arr-searcher:
   replicaCount: 1
 magnet-bridge:
