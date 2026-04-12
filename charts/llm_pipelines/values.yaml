@@ -1,7 +1,7 @@
 global:
   environment: "Production"
   image:
-    tag: "04.12.21-56.adabe5ca"
+    tag: "04.12.22-59.49fb9617"
 replicaCount: 2
 image:
   repository: eugenekallis/llm-pipelines
