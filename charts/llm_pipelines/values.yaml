@@ -16,7 +16,10 @@ ingress:
 env:
   WEBHOOK_URL: ""
   OLLAMA_HOST: "http://ollama.lan:11434/v1"
+  NEWS_API_URL: "https://newsapi.org/v2/everything"
   MODEL: "qwen3.5:4b"
   existingSecret:
     name: "llm-pipelines-secrets"
-    key: "openai-api-key"
+    keys:
+      openai-api-key: OPENAI_API_KEY
+      news-api-key: NEWS_API_KEY

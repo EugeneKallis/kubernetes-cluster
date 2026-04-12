@@ -37,11 +37,13 @@ spec:
           value: "1"
         - name: WEBHOOK_URL
           value: {{ .Values.env.WEBHOOK_URL | quote }}
-        - name: OPENAI_API_KEY
+        {{- range $secretKey, $envVar := .Values.env.existingSecret.keys }}
+        - name: {{ $envVar }}
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.env.existingSecret.name | quote }}
-              key: {{ .Values.env.existingSecret.key | quote }}
+              name: {{ $.Values.env.existingSecret.name | quote }}
+              key: {{ $secretKey | quote }}
+        {{- end }}
         - name: OLLAMA_HOST
           value: {{ .Values.env.OLLAMA_HOST | quote }}
         - name: MODEL
