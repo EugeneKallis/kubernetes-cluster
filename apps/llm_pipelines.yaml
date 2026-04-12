@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: llm_pipelines
+  name: llm-pipelines
   namespace: argocd
 spec:
   project: default
@@ -14,7 +14,7 @@ spec:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: llm_pipelines
+    namespace: llm-pipelines
   syncPolicy:
     automated:
       prune: true

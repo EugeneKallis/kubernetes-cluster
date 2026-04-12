@@ -78,6 +78,16 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 > **Note:** It is recommended to change this password after your first login!
 
+### 5.3 Fix `copyutil` Init Container Bug
+
+The upstream ArgoCD manifests use `ln -s` in the `copyutil` init container, which fails if the symlink already exists (e.g., after a container restart). This causes a `CrashLoopBackOff`. Apply this patch to use `ln -sf` instead:
+
+```bash
+kubectl patch deployment argocd-repo-server -n argocd --type='json' --patch-file setup/argocd-repo-server-patch.yaml
+```
+
+> **Note:** This patch must be re-applied after upgrading ArgoCD manifests.
+
 ## 6. Expose ArgoCD via Gateway API
 
 ```bash

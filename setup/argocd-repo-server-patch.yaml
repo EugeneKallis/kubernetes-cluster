@@ -1,0 +1,11 @@
+# Patch for argocd-repo-server Deployment
+# Fixes CrashLoopBackOff on the copyutil init container caused by
+# `ln -s` failing when the symlink already exists from a previous restart.
+# Changes `ln -s` to `ln -sf` (force) so the symlink is recreated idempotently.
+#
+# Apply with:
+#   kubectl patch deployment argocd-repo-server -n argocd --type='json' --patch-file setup/argocd-repo-server-patch.yaml
+
+- op: replace
+  path: /spec/template/spec/initContainers/0/args/0
+  value: "/bin/cp --update=none /usr/local/bin/argocd /var/run/argocd/argocd && /bin/ln -sf /var/run/argocd/argocd /var/run/argocd/argocd-cmp-server"
