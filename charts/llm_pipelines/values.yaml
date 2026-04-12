@@ -1,23 +1,18 @@
 global:
   environment: "Production"
   image:
-    tag: "04.12.13-20.1f1c5134"
-
+    tag: "04.12.16-37.de62f505"
 replicaCount: 2
-
 image:
   repository: eugenekallis/llm-pipelines
   tag: latest
-
 service:
   type: ClusterIP
   port: 8000
-
 ingress:
   enabled: true
   className: "traefik"
   host: "llm-pipelines.k3s.lan"
-
 env:
   WEBHOOK_URL: ""
   OLLAMA_HOST: "http://ollama.lan:11434/v1"
