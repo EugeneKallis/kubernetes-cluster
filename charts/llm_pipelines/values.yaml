@@ -1,11 +1,9 @@
 global:
   environment: "Production"
   image:
-    tag: "04.08.22-47."
-
+    tag: "04.12.13-20.1f1c5134"
 frontend:
   ingress:
     host: "llm-pipelines.k3s.lan"
-
 image:
   repository: eugenekallis/llm-pipelines
