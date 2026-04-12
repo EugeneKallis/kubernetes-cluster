@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: llm_pipelines
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/EugeneKallis/kubernetes-cluster.git
+    targetRevision: HEAD
+    path: charts/llm_pipelines
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: llm_pipelines
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

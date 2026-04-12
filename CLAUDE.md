@@ -24,7 +24,7 @@ To check ArgoCD sync status:
 kubectl get applications -n argocd
 ```
 
-ArgoCD UI is at `http://argocd.k3s.lan` (IP: `192.168.1.240`).
+ArgoCD UI is at `http://argocd.k3s.lan` (IP: `192.168.1.254`).
 
 ## Helm Chart Structure
 
@@ -47,7 +47,7 @@ To update the image tag for a deployment, edit the `global.image.tag` field in t
 ## Cluster Infrastructure
 
 Set up once via `setup/` manifests (not managed by ArgoCD):
-- **MetalLB**: Floating IP pool at `192.168.1.240`
+- **MetalLB**: Floating IP pool at `192.168.1.254`
 - **Traefik**: Gateway controller (DaemonSet), Gateway API enabled
 - **ArgoCD**: Installed with `--server-side` for large CRDs
 
@@ -62,7 +62,7 @@ Domain routing uses local DNS (AdGuard Home or `/etc/hosts`):
 - `dev.servertool.k3s.lan` → development frontend
 - `servertool.k3s.lan` → production frontend
 
-All map to `192.168.1.240`. Routing is handled by Traefik via Gateway API `HTTPRoute` resources.
+All map to `192.168.1.254`. Routing is handled by Traefik via Gateway API `HTTPRoute` resources.
 
 ## Ollama
 

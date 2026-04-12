@@ -32,7 +32,7 @@ MetalLB provides a "Floating IP" for your cluster.
    ```bash
    kubectl wait --for=condition=ready pod -l app=metallb -n metallb-system --timeout=120s
    ```
-3. Apply the IP pool configuration (matches your `192.168.1.240` expectation):
+3. Apply the IP pool configuration (matches your `192.168.1.254` expectation):
    ```bash
    kubectl apply -f setup/metallb-config.yaml
    ```
@@ -90,7 +90,7 @@ kubectl apply -f setup/04-argocd-httproute.yaml
 Since you are using **AdGuard Home** (or a local hosts file), map the domain to the floating IP:
 
 - **Domain**: `argocd.k3s.lan`
-- **IP**: `192.168.1.240`
+- **IP**: `192.168.1.254`
 
 Visit at: [http://argocd.k3s.lan](http://argocd.k3s.lan)
 
