@@ -32,7 +32,10 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DATABASE_URL
-          value: {{ .Values.global.databaseUrl | quote }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.backend.database.existingSecret.name | quote }}
+              key: {{ .Values.backend.database.existingSecret.key | quote }}
         - name: REDIS_URL
           value: {{ .Values.global.redisUrl | quote }}
         - name: OLLAMA_HOST
