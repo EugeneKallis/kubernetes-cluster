@@ -1,9 +1,0 @@
-postgres:
-  image: postgres:15
-  port: 5432
-  existingSecret:
-    name: "servertool-postgres"
-    key: "password"
-redis:
-  image: redis:7
-  port: 6379

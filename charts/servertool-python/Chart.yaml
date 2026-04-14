@@ -15,12 +15,6 @@ dependencies:
   - name: agent
     version: 0.1.0
     repository: "file://./agent"
-  - name: infrastructure
-    version: 0.1.0
-    repository: "file://./infrastructure"
-  - name: scraper
-    version: 0.1.0
-    repository: "file://./scraper"
   - name: arr-searcher
     version: 0.1.0
     repository: "file://./arr-searcher"
