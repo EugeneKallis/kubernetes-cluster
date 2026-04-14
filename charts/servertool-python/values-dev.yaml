@@ -1,7 +1,7 @@
 global:
   environment: "Development"
   image:
-    tag: "dev-04.14.13-19.131e3d00"
+    tag: "dev-04.14.13-25.5938c4ee"
   ollamaHost: "http://192.168.1.203:11434"
   redisUrl: "redis://redis:6379/0"
 frontend:
