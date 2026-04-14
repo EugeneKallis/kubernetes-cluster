@@ -34,8 +34,8 @@ spec:
         - name: DATABASE_URL
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.backend.database.existingSecret.name | quote }}
-              key: {{ .Values.backend.database.existingSecret.key | quote }}
+              name: {{ .Values.database.existingSecret.name | quote }}
+              key: {{ .Values.database.existingSecret.key | quote }}
         - name: REDIS_URL
           value: {{ .Values.global.redisUrl | quote }}
         - name: OLLAMA_HOST

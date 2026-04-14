@@ -9,3 +9,7 @@ ollamaHost: "http://localhost:11434"
 magnetBridgeUrl: "http://RELEASE-NAME-magnet-bridge:8081"
 managedCategory: "special"
 corsAllowedOrigins: ""
+database:
+  existingSecret:
+    name: "servertool-postgres"
+    key: "database-url"
