@@ -31,11 +31,19 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.global.image.tag | default .Values.image.tag }}"
         imagePullPolicy: Always
         env:
-        - name: DATABASE_URL
+        - name: POSTGRES_HOST
+          value: {{ .Values.database.host | quote }}
+        - name: POSTGRES_PORT
+          value: {{ .Values.database.port | quote }}
+        - name: POSTGRES_USER
+          value: {{ .Values.database.username | quote }}
+        - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: {{ .Values.database.existingSecret.name | quote }}
               key: {{ .Values.database.existingSecret.key | quote }}
+        - name: POSTGRES_DB
+          value: {{ .Values.database.name | quote }}
         - name: REDIS_URL
           value: {{ .Values.global.redisUrl | quote }}
         - name: OLLAMA_HOST

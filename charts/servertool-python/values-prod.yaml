@@ -15,6 +15,14 @@ backend:
   ollamaHost: "http://192.168.1.203:11434"
   magnetBridgeUrl: "http://servertool-prod-magnet-bridge:8081"
   corsAllowedOrigins: "https://servertool.k3s.lan"
+  database:
+    existingSecret:
+      name: "servertool-postgres"
+      key: "password"
+    host: "db"
+    port: "5432"
+    username: "postgres"
+    name: "postgres"
 agent:
   replicaCount: 2
 arr-searcher:

@@ -43,7 +43,10 @@ spec:
         image: {{ .Values.postgres.image }}
         env:
         - name: POSTGRES_PASSWORD
-          value: {{ .Values.global.postgresPassword | quote }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.postgres.existingSecret.name | quote }}
+              key: {{ .Values.postgres.existingSecret.key | quote }}
         ports:
         - containerPort: {{ .Values.postgres.port }}
         volumeMounts:
