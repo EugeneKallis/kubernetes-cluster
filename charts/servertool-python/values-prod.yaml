@@ -5,6 +5,7 @@ global:
   ollamaHost: "http://192.168.1.203:11434"
   databaseUrl: "postgresql://postgres:postgres@db:5432/postgres"
   redisUrl: "redis://redis:6379/0"
+  redisChannelPrefix: "prod_"
   postgresPassword: "postgres"
 frontend:
   replicaCount: 2
