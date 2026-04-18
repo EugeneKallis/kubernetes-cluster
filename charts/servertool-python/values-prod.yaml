@@ -3,10 +3,8 @@ global:
   image:
     tag: "03.30.23-26.b814e0e7"
   ollamaHost: "http://192.168.1.203:11434"
-  databaseUrl: "postgresql://postgres:postgres@db:5432/postgres"
-  redisUrl: "redis://redis:6379/0"
-  redisChannelPrefix: "prod_"
-  postgresPassword: "postgres"
+  redisUrl: "redis://192.168.1.150:6379/0"
+  redisChannelPrefix: ""
 frontend:
   replicaCount: 2
   ingress:
@@ -20,10 +18,10 @@ backend:
     existingSecret:
       name: "servertool-postgres"
       key: "password"
-    host: "db"
+    host: "192.168.1.150"
     port: "5432"
     username: "postgres"
-    name: "postgres"
+    name: "servertool_prod"
 agent:
   replicaCount: 2
 arr-searcher:
