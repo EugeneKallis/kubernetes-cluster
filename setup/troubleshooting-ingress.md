@@ -68,7 +68,6 @@ arp -an | grep 192.168.1.254
 # Test your ingress URLs
 curl http://argocd.k3s.lan
 curl http://servertool.k3s.lan
-curl http://mission-control.k3s.lan
 ```
 
 The VIP MAC should now match one of your node MACs, and all URLs should return `200`.
