@@ -3,7 +3,7 @@ global:
   image:
     tag: "dev-04.14.15-17.dcf0a822"
   ollamaHost: "http://192.168.1.203:11434"
-  redisUrl: "redis://redis:6379/0"
+  redisUrl: "redis://192.168.1.151:6379/0"
   redisChannelPrefix: ""
 frontend:
   ingress:

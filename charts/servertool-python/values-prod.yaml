@@ -3,7 +3,7 @@ global:
   image:
     tag: "03.30.23-26.b814e0e7"
   ollamaHost: "http://192.168.1.203:11434"
-  redisUrl: "redis://192.168.1.150:6379/0"
+  redisUrl: "redis://192.168.1.151:6379/0"
   redisChannelPrefix: ""
 frontend:
   replicaCount: 2
