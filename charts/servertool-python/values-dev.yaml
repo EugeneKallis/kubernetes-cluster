@@ -1,7 +1,7 @@
 global:
   environment: "Development"
   image:
-    tag: "dev-04.25.01-28.67c1cdc9"
+    tag: "dev-04.25.01-31.5f1ad605"
   ollamaHost: "http://192.168.1.203:11434"
   redisUrl: "redis://192.168.1.151:6379/0"
   redisChannelPrefix: ""
