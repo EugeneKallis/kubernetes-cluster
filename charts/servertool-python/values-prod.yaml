@@ -1,7 +1,7 @@
 global:
   environment: "Production"
   image:
-    tag: "04.25.23-39.31c984fd"
+    tag: "04.25.23-42.83cfccf9"
   ollamaHost: "http://192.168.1.203:11434"
   redisUrl: "redis://192.168.1.151:6379/0"
   redisChannelPrefix: ""
